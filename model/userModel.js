@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const mongoose = require('mongoose');
 const { default: isEmail } = require('validator/lib/isEmail');
 
@@ -35,6 +36,10 @@ const userSchema = mongoose.Schema({
         select: false
     }
 })
+
+userSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
+    return await bcrypt.compare(candidatePassword, userPassword)
+}
 
 const User = mongoose.model('User', userSchema)
 module.exports = User
