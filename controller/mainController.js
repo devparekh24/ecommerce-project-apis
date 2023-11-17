@@ -1,7 +1,7 @@
-const catchAsyncErr = require('/utils/catchAsyncErr')
+const catchAsyncErr = require('./../utils/catchAsyncErr')
 const AppError = require('./../utils/appError')
 
-exports.getAll = catchAsyncErr(async (req, res, next) => {
+exports.getAll = (Model) => catchAsyncErr(async (req, res, next) => {
 
     const doc = await Model.find();
 
@@ -14,7 +14,7 @@ exports.getAll = catchAsyncErr(async (req, res, next) => {
     });
 })
 
-exports.getOne = (Model, populateOptions) = catchAsyncErr(async (req, res, next) => {
+exports.getOne = (Model, populateOptions) => catchAsyncErr(async (req, res, next) => {
 
     let query = Model.findById(req.params.id)
 
@@ -34,7 +34,7 @@ exports.getOne = (Model, populateOptions) = catchAsyncErr(async (req, res, next)
     })
 })
 
-exports.createOne = (Model) = catchAsyncErr(async (req, res, next) => {
+exports.createOne = (Model) => catchAsyncErr(async (req, res, next) => {
 
     const newModel = await Model.create(req.body)
     res.status(201).json({
@@ -46,7 +46,7 @@ exports.createOne = (Model) = catchAsyncErr(async (req, res, next) => {
     next()
 })
 
-exports.updateOne = (Model) = catchAsyncErr(async (req, res, next) => {
+exports.updateOne = (Model) => catchAsyncErr(async (req, res, next) => {
 
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
@@ -65,7 +65,7 @@ exports.updateOne = (Model) = catchAsyncErr(async (req, res, next) => {
     })
 })
 
-exports.deleteOne = (Model) = catchAsyncErr(async (req, res, next) => {
+exports.deleteOne = (Model) => catchAsyncErr(async (req, res, next) => {
 
     const doc = await Model.findByIdAndDelete(req.params.id)
 
