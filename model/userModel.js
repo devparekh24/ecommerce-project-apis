@@ -1,3 +1,4 @@
+const { randomInt } = require('crypto')
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose');
 const { default: isEmail } = require('validator/lib/isEmail');
@@ -63,6 +64,15 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
         return changedTimeStamp > JWTTimestamp;
     }
     return false;
+}
+
+userSchema.methods.resetTokenForCreatePassword = function () {
+
+    // otp generation
+    const resetToken = randomInt(0, 1000000).toString()
+    this.passwordResetToken = resetToken
+    this.passwordResetExpires = Date.now() + 5 * 60 * 1000;
+    return resetToken;
 }
 
 const User = mongoose.model('User', userSchema)
