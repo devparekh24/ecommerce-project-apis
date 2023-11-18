@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const catchAsyncErr = require('../utils/catchAsyncErr')
 const User = require('../model/userModel')
 const AppError = require('../utils/appError')
-// const sendEmail = require('../utils/email')/
+// const sendEmail = require('../utils/email')
 
 const signToken = id => {
     return jwt.sign({ id }, process.env.JWT_SECRETKEY, { expiresIn: process.env.JWT_EXP_TIME })
@@ -13,7 +13,7 @@ const signToken = id => {
 const createSendToken = (user, statusCode, res) => {
 
     const token = signToken(user._id);
-
+    res.cookie('jwt', token)
     user.password = undefined
 
     res.status(statusCode).json({
@@ -56,90 +56,77 @@ exports.login = catchAsyncErr(async (req, res, next) => {
     createSendToken(user, 200, res);
 })
 
-// exports.protectedRoute = catchAsyncErr(async (req, res, next) => {
-//     let token;
+exports.logout = (req, res) => {
 
-//     //checking the token 
-//     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
-//         token = req.headers.authorization.split(' ')[1]
-//     }
-//     else if (req.cookies.jwt) {
-//         token = req.cookies.jwt
-//     }
-//     console.log(token)
-//     if (!token) {
-//         return next(new AppError('You aren\'t logged in!, Please login to get access', 401))
-//     }
+    // console.log(req.cookies)
+    res.clearCookie('jwt')
+    res.send('Logout Successfully')
+}
 
-//     //verification of token 
-//     const decode = await promisify(jwt.verify)(token, process.env.JWT_SECRETKEY)
-//     // console.log(decode)
+exports.isLoggedIn = catchAsyncErr(async (req, res, next) => {
 
-//     //checking the existance of the user
-//     const currentUser = await User.findById(decode.id)
-//     if (!currentUser) {
-//         return next(new AppError('User doesn\'t exist belonging to this token!', 401))
-//     }
+    // console.log(req.cookies)
+    if (req.cookies.jwt) {
+        // try {
 
-//     //check if user changed password after the token(JWT) was issued
-//     if (currentUser.changedPasswordAfter(decode.iat)) {
-//         return next(new AppError('User recently changed password, please login again!', 401))
-//     }
+        //verify the token 
+        const decode = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETKEY)
 
-//     req.user = currentUser;
-//     next() //access granted to the protected route
-// })
+        //checking the existance of the user
+        const currentUser = await User.findById(decode.id)
+        if (!currentUser) {
+            return next()
+        }
 
-// //only for render pages
-// exports.isLoggedIn = catchAsyncErr(async (req, res, next) => {
+        //check if user changed password after the token(JWT) was issued
+        if (currentUser.changedPasswordAfter(decode.iat)) {
+            return next()
+        }
 
-//     console.log(req.cookies)
-//     if (req.cookies.jwt) {
-//         // try {
+        //there is a logged in user
+        res.locals.user = currentUser
+        return next() //access granted to the logged in user
+        // } catch (err) {
+        //     return next()
+        // }
+    }
+    next();
+})
 
-//         //verify the token 
-//         const decode = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETKEY)
+exports.protectedRoute = catchAsyncErr(async (req, res, next) => {
+    let token;
 
-//         //checking the existance of the user
-//         const currentUser = await User.findById(decode.id)
-//         if (!currentUser) {
-//             return next()
-//         }
+    //checking the token 
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+        token = req.headers.authorization.split(' ')[1]
+    }
+    else if (req.cookies.jwt) {
+        token = req.cookies.jwt
+    }
+    // console.log(token)
+    if (!token) {
+        return next(new AppError('You aren\'t logged in!, Please login to get access', 401))
+    }
 
-//         //check if user changed password after the token(JWT) was issued
-//         if (currentUser.changedPasswordAfter(decode.iat)) {
-//             return next()
-//         }
+    //verification of token 
+    const decode = await promisify(jwt.verify)(token, process.env.JWT_SECRETKEY)
+    // console.log(decode)
 
-//         //there is a logged in user
-//         res.locals.user = currentUser
-//         return next() //access granted to the logged in user
-//         // } catch (err) {
-//         //     return next()
-//         // }
-//     }
-//     next();
-// })
+    //checking the existance of the user
+    const currentUser = await User.findById(decode.id)
+    if (!currentUser) {
+        return next(new AppError('User doesn\'t exist belonging to this token!', 401))
+    }
 
-// exports.logout = (req, res) => {
-//     res.cookie('jwt', 'logout', {
-//         expires: new Date(Date.now() + 10 * 1000),
-//         httpOnly: true
-//     })
-//     res.status(200).json({
-//         status: 'success'
-//     })
-// }
+    //check if user changed password after the token(JWT) was issued
+    if (currentUser.changedPasswordAfter(decode.iat)) {
+        return next(new AppError('User recently changed password, please login again!', 401))
+    }
 
-// exports.restrictTo = (...roles) => {
-//     return (req, res, next) => {
-//         //roles = ['admin', 'lead-guide'] but here role = 'user'
-//         if (!roles.includes(req.user.role)) {
-//             return next(new AppError('You don\'t have permission to perform this action!', 403))
-//         }
-//         next();
-//     }
-// }
+    req.user = currentUser;
+    next() //access granted to the protected route
+})
+
 
 // exports.forgotPassword = catchAsyncErr(async (req, res, next) => {
 

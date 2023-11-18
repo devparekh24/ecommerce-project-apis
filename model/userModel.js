@@ -37,8 +37,32 @@ const userSchema = mongoose.Schema({
     }
 })
 
+userSchema.pre('save', async function (next) {
+
+    //if password is actually modified this fn will run 
+    if (!this.isModified('password')) return next();
+
+    //hash the password with cost of 12
+    this.password = await bcrypt.hash(this.password, 12);
+
+    //delete the confirmpassword field
+    this.confirmPassword = undefined;
+    next();
+})
+
 userSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
     return await bcrypt.compare(candidatePassword, userPassword)
+}
+
+userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
+    if (this.passwordChangedAt) {
+
+        const changedTimeStamp = parseInt(this.passwordChangedAt.getTime() / 1000, 10)
+
+        console.log(changedTimeStamp, JWTTimestamp)
+        return changedTimeStamp > JWTTimestamp;
+    }
+    return false;
 }
 
 const User = mongoose.model('User', userSchema)
