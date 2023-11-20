@@ -5,6 +5,8 @@ const authController = require('../controller/authController')
 
 router.use(authController.protectedRoute)
 
+router.get('/most-recent-products', productController.getMostRecentProduct)
+
 router
     .route('/')
     .get(productController.getAllProducts)
