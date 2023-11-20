@@ -1,4 +1,4 @@
-const { randomInt } = require('crypto')
+const crypto = require('crypto')
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose');
 const { default: isEmail } = require('validator/lib/isEmail');
@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
     confirmPassword: {
         type: String,
         required: [true, 'Please confirm your password'],
-        validat: {
+        validate: {
             validator: function (pwd) {
                 return pwd === this.password
             },
@@ -35,7 +35,10 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         default: true,
         select: false
-    }
+    },
+    passwordChangedAt: Date,
+    passwordResetToken: String,
+    passwordResetExpires: Date
 })
 
 userSchema.pre('save', async function (next) {
@@ -48,6 +51,18 @@ userSchema.pre('save', async function (next) {
 
     //delete the confirmpassword field
     this.confirmPassword = undefined;
+    next();
+})
+
+userSchema.pre('save', function (next) {
+    if (!this.isModified('password') || this.isNew) next();
+
+    this.passwordChangedAt = Date.now() - 1000;
+    next()
+})
+
+userSchema.pre(/^find/, function (next) {
+    this.find({ active: { $ne: false } })
     next();
 })
 
@@ -68,10 +83,9 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
 
 userSchema.methods.resetTokenForCreatePassword = function () {
 
-    // otp generation
-    const resetToken = randomInt(0, 1000000).toString()
-    this.passwordResetToken = resetToken
-    this.passwordResetExpires = Date.now() + 5 * 60 * 1000;
+    const resetToken = crypto.randomBytes(32).toString('hex')
+    this.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex')
+    this.passwordResetExpires = Date.now() + 15 * 60 * 1000;
     return resetToken;
 }
 

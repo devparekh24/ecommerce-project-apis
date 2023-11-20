@@ -140,19 +140,43 @@ exports.forgotPassword = catchAsyncErr(async (req, res, next) => {
 
     //generate random reset token 
     const resetToken = user.resetTokenForCreatePassword()
-    console.log(resetToken)
     await user.save({ validateBeforeSave: false })
 
     //send to the user email
-    const resetURL = `${req.protocol}://${req.get('host')}/users/resetPassword/${resetToken}`;
+    const resetURL = `${req.protocol}://${req.get('host')}/users/resetpassword/${resetToken}`;
 
-    const message = `Forgot your password? Submit a PATCH request with your new password and confirmPassword to: ${resetURL}.\n If you didn't forget your password, please ignore this email!`;
+    const message = `<body style="font-family: Arial, sans-serif;">
+
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+
+        <h2>Forgot Password?</h2>
+
+        <p>
+            It seems that you've requested to reset your password. To proceed, please click the link below:
+        </p>
+
+        <p>
+            <a href="${resetURL}" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #fff; text-decoration: none; border-radius: 5px;">Reset Password</a>
+        </p>
+
+        <p>
+            If you did not request a password reset, you can ignore this email.
+        </p>
+
+        <p>
+            Thanks,<br>
+            ${user.name}
+        </p>
+
+    </div>
+
+</body>`;
 
     try {
 
         await sendEmail({
             email: user.email,
-            subject: 'Your password reset token (its valid for only 5 min)',
+            subject: 'Forgot Password (It is Valid for only 15 minutes)',
             message
         })
 
@@ -171,57 +195,42 @@ exports.forgotPassword = catchAsyncErr(async (req, res, next) => {
 
 })
 
-// exports.resetPassword = catchAsyncErr(async (req, res, next) => {
+exports.resetPassword = catchAsyncErr(async (req, res, next) => {
+    //1. Get user based on the token 
+    const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex')
+    const user = await User.findOne({ passwordResetToken: hashedToken, passwordResetExpires: { $gt: Date.now() } })
 
-//     //1. Get user based on the token 
-//     const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex')
-//     const user = await User.findOne({ passwordResetToken: hashedToken, passwordResetExpires: { $gt: Date.now() } })
+    //2. Token isn't expire && user is there then==> set new password
+    if (!user) {
+        return next(new AppError('Token is Invalid or has Expired!', 400))
+    }
+    user.password = req.body.password;
+    user.confirmPassword = req.body.confirmPassword;
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save()
 
-//     //2. Token isn't expire && user is there then==> set new password
-//     if (!user) {
-//         return next(new AppError('Token is Invalid or has Expired!', 400))
-//     }
-//     user.password = req.body.password;
-//     user.confirmPassword = req.body.confirmPassword;
-//     user.passwordResetToken = undefined;
-//     user.passwordResetExpires = undefined;
-//     await user.save()
+    //3.Update changedPasswordAt Property for user
+    user.passwordChangedAt = Date.now()
 
-//     //3.Update changedPasswordAt Property for user
-//     user.passwordChangedAt = Date.now()
+    //4. log the user in, send JWT
+    createSendToken(user, 200, res);
+})
 
-//     //4. log the user in, send JWT 
-//     // const token = signToken(user._id)
+exports.updatePassword = catchAsyncErr(async (req, res, next) => {
+    //1. get user from collection
+    const user = await User.findById(req.user.id).select('+password')
 
-//     // res.status(200).json({
-//     //     status: "success",
-//     //     token
-//     // })
-//     createSendToken(user, 200, res);
-//     next()
-// })
+    //2. check if posted currentpassword is correct 
+    if (!(await user.correctPassword(req.body.currentPassword, user.password))) {
+        return next(new AppError('Your current Password is Wrong!', 401))
+    }
 
-// exports.updatePassword = catchAsyncErr(async (req, res, next) => {
-//     //1. get user from collection
-//     const user = await User.findById(req.user.id).select('+password')
+    //3. if so then update password
+    user.password = req.body.password;
+    user.confirmPassword = req.body.confirmPassword;
+    await user.save();
 
-//     //2. check if posted currentpassword is correct 
-//     if (!(await user.correctPassword(req.body.currentPassword, user.password))) {
-//         return next(new AppError('Your current Password is Wrong!', 401))
-//     }
-
-//     //3. if so then update password
-//     user.password = req.body.password;
-//     user.confirmPassword = req.body.confirmPassword;
-//     await user.save();
-
-//     //4. log user in, send JWT
-//     // const token = signToken(user._id)
-
-//     // res.status(200).json({
-//     //     status: "success",
-//     //     token
-//     // })
-//     createSendToken(user, 200, res);
-//     next()
-// })
+    //4. log user in, send JWT
+    createSendToken(user, 200, res);
+})

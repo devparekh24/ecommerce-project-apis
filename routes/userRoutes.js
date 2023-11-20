@@ -6,10 +6,15 @@ const authController = require('./../controller/authController')
 router.post('/register', authController.register)
 router.post('/login', authController.login)
 router.post('/forgotpassword', authController.forgotPassword)
+router.patch('/resetpassword/:token', authController.resetPassword)
 
 router.use(authController.protectedRoute)
 
+router.patch('/updateMyPassword', authController.updatePassword)
+
 router.get('/logout', authController.logout)
+
+router.use(authController.protectedRoute)
 
 router
     .route('/')
