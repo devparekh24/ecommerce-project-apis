@@ -61,4 +61,19 @@ exports.commentOnProduct = catchAsyncErr(async (req, res, next) => {
         comment
 
     })
-}) 
+})
+
+exports.getMostLikedProducts = catchAsyncErr(async (req, res, next) => {
+
+    const products = await Product.find().sort({ likes: -1 }).limit(5).select('_id title likes')
+
+    if (!products) {
+        return next(new AppError('No Product Found!', 404))
+    }
+
+    res.status(200).json({
+        status: 'success',
+        result: products.length,
+        products
+    })
+})
