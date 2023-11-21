@@ -37,3 +37,28 @@ exports.getProductByProductTypes = catchAsyncErr(async (req, res, next) => {
         data: productByType
     })
 })
+
+exports.commentOnProduct = catchAsyncErr(async (req, res, next) => {
+
+    const { id } = req.params;
+    const { comment } = req.body;
+
+    const product = await Product.findById(id)
+
+    if (!product) {
+        return next(new AppError('No Product Found with this ID', 404))
+    }
+    if (!comment || comment === '') {
+        return next(new AppError('Comment cannot be empty!', 404))
+    }
+
+    product.comments.push(comment)
+    await product.save()
+
+    res.status(200).json({
+        status: "success",
+        message: "Comment Added Successfully!",
+        comment
+
+    })
+}) 
