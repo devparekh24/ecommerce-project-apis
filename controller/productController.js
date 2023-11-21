@@ -20,3 +20,22 @@ exports.getMostRecentProduct = catchAsyncErr(async (req, res, next) => {
         recentProducts
     })
 })
+
+exports.getProductByProductTypes = catchAsyncErr(async (req, res, next) => {
+
+    const typeId = req.params.id
+    console.log(typeId)
+
+    const productByType = await Product.find({ category: typeId })
+    console.log(productByType)
+
+    if (!typeId || !productByType) {
+        return next(new AppError('No Product Found by this Product Category!', 404))
+    }
+
+    res.status(200).json({
+        status: 'success',
+        result: productByType.length,
+        data: productByType
+    })
+})

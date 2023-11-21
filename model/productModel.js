@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema({
         required: [true, 'Product must has a price']
     },
     category: {
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'ProductType',
         required: true
     },
@@ -40,8 +40,8 @@ const productSchema = new mongoose.Schema({
         type: [String]
     }
 }, {
-    toJSON: true,
-    toObject: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
     timestamps: true
 })
 

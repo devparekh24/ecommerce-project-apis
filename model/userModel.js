@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
     email: {
         type: String,
         required: [true, 'User must has a email'],
-        validat: [isEmail, 'Please enter valid email!'],
+        validate: [isEmail, 'Please enter valid email!'],
         unique: true,
         lowercase: true
     },
@@ -31,6 +31,11 @@ const userSchema = mongoose.Schema({
             message: 'Confirm Password always match with the Password'
         }
     },
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default: 'user'
+    },
     active: {
         type: Boolean,
         default: true,
@@ -39,6 +44,10 @@ const userSchema = mongoose.Schema({
     passwordChangedAt: Date,
     passwordResetToken: String,
     passwordResetExpires: Date
+}, {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+    timestamps: true
 })
 
 userSchema.pre('save', async function (next) {

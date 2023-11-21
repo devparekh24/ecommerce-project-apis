@@ -1,62 +1,82 @@
 [
     {
+        "_id": "655c52520fcf36edb29ef8e5",
         "category": "smartphones"
     },
     {
+        "_id": "655c52520fcf36edb29ef8e6",
         "category": "laptops"
     },
     {
+        "_id": "655c52520fcf36edb29ef8e7",
         "category": "fragrances"
     },
     {
+        "_id": "655c52520fcf36edb29ef8e8",
         "category": "skincare"
     },
     {
+        "_id": "655c52520fcf36edb29ef8e9",
         "category": "groceries"
     },
     {
+        "_id": "655c52520fcf36edb29ef8ea",
         "category": "home-decoration"
     },
     {
+        "_id": "655c52520fcf36edb29ef8eb",
         "category": "furniture"
     },
     {
+        "_id": "655c52520fcf36edb29ef8ec",
         "category": "tops"
     },
     {
+        "_id": "655c52520fcf36edb29ef8ed",
         "category": "womens-dresses"
     },
     {
+        "_id": "655c52520fcf36edb29ef8ee",
         "category": "womens-shoes"
     },
     {
+        "_id": "655c52520fcf36edb29ef8ef",
         "category": "mens-shirts"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f0",
         "category": "mens-shoes"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f1",
         "category": "mens-watches"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f2",
         "category": "womens-watches"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f3",
         "category": "womens-bags"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f4",
         "category": "womens-jewellery"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f5",
         "category": "sunglasses"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f6",
         "category": "automotive"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f7",
         "category": "motorcycle"
     },
     {
+        "_id": "655c52520fcf36edb29ef8f8",
         "category": "lighting"
     }
 ]
