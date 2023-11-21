@@ -16,8 +16,9 @@ const productSchema = new mongoose.Schema({
         required: [true, 'Product must has a price']
     },
     category: {
-        type: String,
-        required: [true, 'Product must has a category']
+        type: mongoose.Schema.ObjectId,
+        ref: 'ProductType',
+        required: true
     },
     thumbnail: {
         type: String,
@@ -39,6 +40,8 @@ const productSchema = new mongoose.Schema({
         type: [String]
     }
 }, {
+    toJSON: true,
+    toObject: true,
     timestamps: true
 })
 
