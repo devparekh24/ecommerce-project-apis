@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { isEmpty } = require('validator/lib/isEmpty')
+
 const productTypeSchema = new mongoose.Schema({
     category: {
         type: String,

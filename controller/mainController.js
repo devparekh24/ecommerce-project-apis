@@ -13,7 +13,7 @@ exports.getAll = (Model) => catchAsyncErr(async (req, res, next) => {
         .paginate();
 
     // const doc = await features.query.explain(); // exp for indexes in DB
-    const doc = await features.query;
+    const doc = await features.query.select('-__v -createdAt -updatedAt');
 
     res.status(200).json({
         status: 'success',
@@ -30,7 +30,7 @@ exports.getOne = (Model, populateOptions) => catchAsyncErr(async (req, res, next
 
     if (populateOptions) query = query.populate(populateOptions)
 
-    const doc = await query;
+    const doc = await query.select('-__v -createdAt -updatedAt');
 
     if (!doc) {
         return next(new AppError('No document found with that ID', 404))

@@ -24,6 +24,11 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Product must has a thumbnail']
     },
+    likes: {
+        type: Number,
+        default: 0
+    },
+    comments: [{ type: String }],
     discountPercentage: {
         type: Number
     },
