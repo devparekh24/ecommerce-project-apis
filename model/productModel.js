@@ -24,10 +24,12 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Product must has a thumbnail']
     },
-    likes: {
-        type: Number,
-        default: 0
-    },
+    likes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Like'
+        }
+    ],
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,

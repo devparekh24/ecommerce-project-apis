@@ -1,82 +1,342 @@
 [
     {
-        "id": "655c52520fcf36edb29ef8e5",
-        "category": "smartphones"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad8d"
+        },
+        "category": "skincare",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8e6",
-        "category": "laptops"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad8a"
+        },
+        "category": "smartphones",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8e7",
-        "category": "fragrances"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad90"
+        },
+        "category": "furniture",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8e8",
-        "category": "skincare"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad8b"
+        },
+        "category": "laptops",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8e9",
-        "category": "groceries"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad8f"
+        },
+        "category": "home-decoration",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8ea",
-        "category": "home-decoration"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad8e"
+        },
+        "category": "groceries",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8eb",
-        "category": "furniture"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad8c"
+        },
+        "category": "fragrances",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8ec",
-        "category": "tops"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad93"
+        },
+        "category": "womens-shoes",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8ed",
-        "category": "womens-dresses"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad94"
+        },
+        "category": "mens-shirts",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8ee",
-        "category": "womens-shoes"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad96"
+        },
+        "category": "mens-watches",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8ef",
-        "category": "mens-shirts"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad95"
+        },
+        "category": "mens-shoes",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f0",
-        "category": "mens-shoes"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad97"
+        },
+        "category": "womens-watches",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f1",
-        "category": "mens-watches"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad98"
+        },
+        "category": "womens-bags",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f2",
-        "category": "womens-watches"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad9a"
+        },
+        "category": "sunglasses",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f3",
-        "category": "womens-bags"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad9b"
+        },
+        "category": "automotive",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f4",
-        "category": "womens-jewellery"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad99"
+        },
+        "category": "womens-jewellery",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f5",
-        "category": "sunglasses"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad9c"
+        },
+        "category": "motorcycle",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f6",
-        "category": "automotive"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad9d"
+        },
+        "category": "lighting",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760214"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f7",
-        "category": "motorcycle"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad91"
+        },
+        "category": "tops",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     },
     {
-        "id": "655c52520fcf36edb29ef8f8",
-        "category": "lighting"
+        "_id": {
+            "$oid": "655c96e83d2fd1bd4cd8ad92"
+        },
+        "category": "womens-dresses",
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700566760211"
+            }
+        },
+        "__v": 0
     }
 ]

@@ -1,51 +1,184 @@
 [
     {
+        "_id": {
+            "$oid": "655c998f9eaee630d139c18a"
+        },
+        "name": "admin",
+        "email": "admin@example.com",
+        "password": "$2b$12$njJWkSLq30mwXpBUwoTWietJ6gY6aF.rhwW4bxKeXl3QH3jWphepS",
+        "role": "admin",
+        "active": true,
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700567439772"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700633325155"
+            }
+        },
+        "passwordChangedAt": {
+            "$date": {
+                "$numberLong": "1700567439075"
+            }
+        },
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "655d9c98d1c8c390a533ec39"
+        },
         "name": "Lourdes Browning",
         "email": "loulou@example.com",
-        "password": "$2a$12$hP1h2pnNp7wgyZNRwPsOTeZuNzWBv7vHmsR3DT/OaPSUBQT.y0S..",
+        "password": "$2b$12$CWQRDs6fk8nNQ3kiJydykO8K24.kVBwJPJ8iABq3h6Mj5N98oB/g6",
         "role": "user",
-        "active": true
+        "active": true,
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700633752659"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700633752659"
+            }
+        },
+        "passwordChangedAt": {
+            "$date": {
+                "$numberLong": "1700633751955"
+            }
+        },
+        "__v": 0
     },
     {
+        "_id": {
+            "$oid": "655d9cc0d1c8c390a533ec40"
+        },
         "name": "Sophie Louise Hart",
         "email": "sophie@example.com",
-        "password": "$2a$12$9nFqToiTmjgfFVJiQvjmreLt4k8X4gGYCETGapSZOb2hHa55t0dDq",
+        "password": "$2b$12$wWqCrcq0pVuAzLxfkY/9/.eeWSVO5ukQTt3Y0daE8uAqTgOqM4P06",
         "role": "user",
-        "active": true
+        "active": true,
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700633792047"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700633792047"
+            }
+        },
+        "passwordChangedAt": {
+            "$date": {
+                "$numberLong": "1700633791337"
+            }
+        },
+        "__v": 0
     },
     {
+        "_id": {
+            "$oid": "655d9e5fe66a38c24082445d"
+        },
         "name": "Ayla Cornell",
         "email": "ayls@example.com",
-        "password": "$2a$12$tm33.M/4pfEbZF64WbFuHuVFv85v4qEhi.ik8njbud7yaoqCZpjiy",
+        "password": "$2b$12$Y7s9vR6.c1Cs8QptpwCRP.B/.BU4SISzvWZy1o6dLMbc/0bRXuRHa",
         "role": "user",
-        "active": true
+        "active": true,
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700634207751"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700634207751"
+            }
+        },
+        "passwordChangedAt": {
+            "$date": {
+                "$numberLong": "1700634207047"
+            }
+        },
+        "__v": 0
     },
     {
+        "_id": {
+            "$oid": "655d9e75e66a38c240824461"
+        },
         "name": "Leo Gillespie",
         "email": "leo@example.com",
-        "password": "$2a$12$OOPr90tBEBF1Iho3ox0Jde0O/WXUR0VLA5xdh6tWcu7qb.qOCvSg2",
+        "password": "$2b$12$wg1ikaBPuP0BqE9GjAU62O6FELV.o8RW9rGIFctEWFzPTSvs7U94u",
         "role": "user",
-        "active": true
+        "active": true,
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700634229641"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700634229641"
+            }
+        },
+        "passwordChangedAt": {
+            "$date": {
+                "$numberLong": "1700634228941"
+            }
+        },
+        "__v": 0
     },
     {
+        "_id": {
+            "$oid": "655d9e8ae66a38c240824465"
+        },
         "name": "Jennifer Hardy",
         "email": "jennifer@example.com",
-        "password": "$2a$12$XCXvvlhRBJ8CydKH09v1v.jpg0hB9gVVfMVEoz4MsxqL9zb5PrF42",
+        "password": "$2b$12$LuqA8BC2Ptnsd3n9EWQcBe/4KrjiK7YufIsgxzE5pq39w7DLoN0OC",
         "role": "user",
-        "active": true
+        "active": true,
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700634250088"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700634250088"
+            }
+        },
+        "passwordChangedAt": {
+            "$date": {
+                "$numberLong": "1700634249380"
+            }
+        },
+        "__v": 0
     },
     {
+        "_id": {
+            "$oid": "655d9e9ee66a38c240824469"
+        },
         "name": "Kate Morrison",
         "email": "kate@example.com",
-        "password": "$2a$12$II1F3aBSFDF3Xz7iB4rk/.a2dogwkClMN5gGCWrRlILrG1xtJG7q6",
+        "password": "$2b$12$jfO05iYK9jCajcMnjaOKoOw1LLhpldoeX1JTrTWtT132PBCyWM2eq",
         "role": "user",
-        "active": true
-    },
-    {
-        "name": "Admin",
-        "email": "admin@example.com",
-        "password": "$2a$12$Jb/ILhdDV.ZpnPMu19xfe.NRh5ntE2LzNMNcsty05QWwRbmFFVMKO",
-        "role": "admin",
-        "active": true
+        "active": true,
+        "createdAt": {
+            "$date": {
+                "$numberLong": "1700634270586"
+            }
+        },
+        "updatedAt": {
+            "$date": {
+                "$numberLong": "1700634350644"
+            }
+        },
+        "passwordChangedAt": {
+            "$date": {
+                "$numberLong": "1700634269883"
+            }
+        },
+        "__v": 0
     }
 ]
