@@ -38,20 +38,20 @@ exports.getProductByProductTypes = catchAsyncErr(async (req, res, next) => {
     })
 })
 
-exports.getMostLikedProducts = catchAsyncErr(async (req, res, next) => {
+// exports.getMostLikedProducts = catchAsyncErr(async (req, res, next) => {
 
-    const products = await Product.find().sort({ likes: -1 }).limit(5).select('_id title likes')
+//     const products = await Product.findOne().sort({ likes: -1 }).limit(3).select('_id title likes')
+//     // const likes = products.likes.length
+//     if (!products) {
+//         return next(new AppError('No Product Found!', 404))
+//     }
 
-    if (!products) {
-        return next(new AppError('No Product Found!', 404))
-    }
-
-    res.status(200).json({
-        status: 'success',
-        result: products.length,
-        products
-    })
-})
+//     res.status(200).json({
+//         status: 'success',
+//         result: products.length,
+//         products
+//     })
+// })
 // exports.commentOnProduct = catchAsyncErr(async (req, res, next) => {
 
 //     const { id } = req.params;

@@ -53,3 +53,33 @@ exports.addLikeOnProduct = catchAsyncErr(async (req, res, next) => {
         })
     }
 })
+
+exports.getMostLikedProducts = catchAsyncErr(async (req, res, next) => {
+
+    const mostLikedProducts = await Like.aggregate([
+        {
+            $group: {
+                _id: '$product',
+                count: { $sum: 1 },
+            },
+        },
+        {
+            $sort: { count: -1 },
+        },
+    ]);
+
+    // Extract product IDs from the aggregation result
+    const mostLikedProductIds = mostLikedProducts.map(like => like._id);
+
+    // Retrieve product details for the most liked products
+    const mostLikedProductDetails = await Product.find({ _id: { $in: mostLikedProductIds } }).limit(3).select('_id title likes');
+
+    if (!mostLikedProductDetails) {
+        return next(new AppError('No Product Found!', 404))
+    }
+    res.status(200).json({
+        status: 'success',
+        result: mostLikedProductDetails.length,
+        products: mostLikedProductDetails
+    })
+})

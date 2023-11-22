@@ -57,5 +57,10 @@ const productSchema = new mongoose.Schema({
     timestamps: true
 })
 
+//virtual properties
+productSchema.virtual('totalLikes').get(function () {
+    return this.likes.length;
+})
+
 const Product = mongoose.model('Product', productSchema)
 module.exports = Product;

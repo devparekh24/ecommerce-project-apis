@@ -10,7 +10,7 @@ router.use(authController.protectedRoute)
 router.get('/most-recent-products', productController.getMostRecentProduct)
 router.get('/getbytype/:id', productController.getProductByProductTypes)
 router.post('/:id/comments', commentController.setProductUserId, commentController.createComment)
-router.get('/most-liked', productController.getMostLikedProducts)
+router.get('/most-liked', likeController.getMostLikedProducts)
 router.post('/:id/likes', likeController.setProductUserId, likeController.addLikeOnProduct)
 
 router
