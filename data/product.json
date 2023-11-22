@@ -8,6 +8,12 @@
         "stock": 94,
         "brand": "Apple",
         "category": "655c52520fcf36edb29ef8e5",
+        "likes": 0,
+        "comments": [
+            "655da9573d0cc46aa486b19f",
+            "655da9573d0cc46aa486b1a0",
+            "655da9573d0cc46aa486b1a1"
+        ],
         "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/1/1.jpg",
@@ -26,6 +32,8 @@
         "stock": 36,
         "brand": "Samsung",
         "category": "655c52520fcf36edb29ef8e5",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/3/1.jpg"
@@ -40,6 +48,12 @@
         "stock": 83,
         "brand": "Apple",
         "category": "655c52520fcf36edb29ef8e6",
+        "likes": 0,
+        "comments": [
+            "655da9573d0cc46aa486b1a2",
+            "655da9573d0cc46aa486b1a3",
+            "655da9573d0cc46aa486b1a4"
+        ],
         "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
         "images": [
             "https://i.dummyjson.com/data/products/6/1.png",
@@ -57,6 +71,8 @@
         "stock": 50,
         "brand": "Samsung",
         "category": "655c52520fcf36edb29ef8e6",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/7/1.jpg",
@@ -74,6 +90,8 @@
         "stock": 65,
         "brand": "Impression of Acqua Di Gio",
         "category": "655c52520fcf36edb29ef8e7",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/11/1.jpg",
@@ -91,6 +109,8 @@
         "stock": 52,
         "brand": "Royal_Mirage",
         "category": "655c52520fcf36edb29ef8e7",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/12/1.jpg",
@@ -109,6 +129,8 @@
         "stock": 110,
         "brand": "L'Oreal Paris",
         "category": "655c52520fcf36edb29ef8e8",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/16/1.png",
@@ -127,6 +149,8 @@
         "stock": 78,
         "brand": "Hemani Tea",
         "category": "655c52520fcf36edb29ef8e8",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/17/1.jpg",
@@ -144,6 +168,8 @@
         "stock": 133,
         "brand": "Saaf & Khaas",
         "category": "655c52520fcf36edb29ef8e9",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/21/thumbnail.png",
         "images": [
             "https://i.dummyjson.com/data/products/21/1.png",
@@ -160,6 +186,8 @@
         "stock": 146,
         "brand": "Bake Parlor Big",
         "category": "655c52520fcf36edb29ef8e9",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/22/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/22/1.jpg",
@@ -176,6 +204,8 @@
         "stock": 131,
         "brand": "Boho Decor",
         "category": "655c52520fcf36edb29ef8ea",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/26/1.jpg",
@@ -195,6 +225,8 @@
         "stock": 17,
         "brand": "Flying Wooden",
         "category": "655c52520fcf36edb29ef8ea",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/27/thumbnail.webp",
         "images": [
             "https://i.dummyjson.com/data/products/27/1.jpg",
@@ -213,6 +245,8 @@
         "stock": 140,
         "brand": "Furniture Bed Set",
         "category": "655c52520fcf36edb29ef8eb",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/31/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/31/1.jpg",
@@ -231,6 +265,8 @@
         "stock": 30,
         "brand": "Ratttan Outdoor",
         "category": "655c52520fcf36edb29ef8eb",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/32/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/32/1.jpg",
@@ -248,6 +284,8 @@
         "stock": 39,
         "brand": "Professional Wear",
         "category": "655c52520fcf36edb29ef8ec",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/36/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/36/1.jpg",
@@ -266,6 +304,8 @@
         "stock": 107,
         "brand": "Soft Cotton",
         "category": "655c52520fcf36edb29ef8ec",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/37/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/37/1.jpg",
@@ -284,6 +324,8 @@
         "stock": 21,
         "brand": "RED MICKY MOUSE..",
         "category": "655c52520fcf36edb29ef8ed",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/41/thumbnail.webp",
         "images": [
             "https://i.dummyjson.com/data/products/41/1.jpg",
@@ -302,6 +344,8 @@
         "stock": 148,
         "brand": "Digital Printed",
         "category": "655c52520fcf36edb29ef8ed",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/42/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/42/1.png",
@@ -320,6 +364,8 @@
         "stock": 72,
         "brand": "IELGY fashion",
         "category": "655c52520fcf36edb29ef8ee",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/46/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/46/1.webp",
@@ -338,6 +384,8 @@
         "stock": 50,
         "brand": "Synthetic Leather",
         "category": "655c52520fcf36edb29ef8ee",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/47/thumbnail.jpeg",
         "images": [
             "https://i.dummyjson.com/data/products/47/1.jpg",
@@ -355,6 +403,8 @@
         "stock": 132,
         "brand": "Vintage Apparel",
         "category": "655c52520fcf36edb29ef8ef",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/51/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/51/1.png",
@@ -372,6 +422,8 @@
         "stock": 128,
         "brand": "FREE FIRE",
         "category": "655c52520fcf36edb29ef8ef",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/52/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/52/1.png",
@@ -390,6 +442,8 @@
         "stock": 6,
         "brand": "Sneakers",
         "category": "655c52520fcf36edb29ef8f0",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/56/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/56/1.jpg",
@@ -409,6 +463,8 @@
         "stock": 20,
         "brand": "Rubber",
         "category": "655c52520fcf36edb29ef8f0",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/57/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/57/1.jpg",
@@ -427,6 +483,8 @@
         "stock": 91,
         "brand": "Naviforce",
         "category": "655c52520fcf36edb29ef8f1",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/61/1.jpg",
@@ -443,6 +501,8 @@
         "stock": 95,
         "brand": "SKMEI 9117",
         "category": "655c52520fcf36edb29ef8f1",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/62/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/62/1.jpg",
@@ -458,6 +518,8 @@
         "stock": 24,
         "brand": "Eastern Watches",
         "category": "655c52520fcf36edb29ef8f2",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/66/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/66/1.jpg",
@@ -476,6 +538,8 @@
         "stock": 46,
         "brand": "Eastern Watches",
         "category": "655c52520fcf36edb29ef8f2",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/67/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/67/1.jpg",
@@ -494,6 +558,8 @@
         "stock": 17,
         "brand": "LouisWill",
         "category": "655c52520fcf36edb29ef8f3",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/71/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/71/1.jpg",
@@ -511,6 +577,8 @@
         "stock": 27,
         "brand": "LouisWill",
         "category": "655c52520fcf36edb29ef8f3",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/72/thumbnail.webp",
         "images": [
             "https://i.dummyjson.com/data/products/72/1.jpg",
@@ -529,6 +597,8 @@
         "stock": 51,
         "brand": "Darojay",
         "category": "655c52520fcf36edb29ef8f4",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/76/1.jpg",
@@ -545,6 +615,8 @@
         "stock": 149,
         "brand": "Copenhagen Luxe",
         "category": "655c52520fcf36edb29ef8f4",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/77/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/77/1.jpg",
@@ -562,6 +634,8 @@
         "stock": 78,
         "brand": "Designer Sun Glasses",
         "category": "655c52520fcf36edb29ef8f5",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/81/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/81/1.jpg",
@@ -580,6 +654,8 @@
         "stock": 78,
         "brand": "Designer Sun Glasses",
         "category": "655c52520fcf36edb29ef8f5",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/82/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/82/1.jpg",
@@ -598,6 +674,8 @@
         "stock": 22,
         "brand": "Car Aux",
         "category": "655c52520fcf36edb29ef8f6",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/86/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/86/1.jpg",
@@ -616,6 +694,8 @@
         "stock": 37,
         "brand": "W1209 DC12V",
         "category": "655c52520fcf36edb29ef8f6",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/87/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/87/1.jpg",
@@ -634,6 +714,8 @@
         "stock": 115,
         "brand": "METRO 70cc Motorcycle - MR70",
         "category": "655c52520fcf36edb29ef8f7",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/91/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/91/1.jpg",
@@ -652,6 +734,8 @@
         "stock": 22,
         "brand": "BRAVE BULL",
         "category": "655c52520fcf36edb29ef8f7",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/92/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/92/1.jpg",
@@ -669,6 +753,8 @@
         "stock": 96,
         "brand": "lightingbrilliance",
         "category": "655c52520fcf36edb29ef8f8",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/96/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/96/1.jpg",
@@ -687,6 +773,8 @@
         "stock": 146,
         "brand": "Ifei Home",
         "category": "655c52520fcf36edb29ef8f8",
+        "likes": 0,
+        "comments": [],
         "thumbnail": "https://i.dummyjson.com/data/products/97/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/97/1.jpg",

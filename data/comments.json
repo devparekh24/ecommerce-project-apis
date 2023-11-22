@@ -1,0 +1,32 @@
+[
+    {
+        "comment": "It's an amzing phone!",
+        "user": "655d9c98d1c8c390a533ec39",
+        "product": "655c96e63d2fd1bd4cd8ad01"
+    },
+    {
+        "comment": "It's a wonderful phone!",
+        "user": "655d9cc0d1c8c390a533ec40",
+        "product": "655c96e63d2fd1bd4cd8ad01"
+    },
+    {
+        "comment": "It's Good!",
+        "user": "655d9e5fe66a38c24082445d",
+        "product": "655c96e63d2fd1bd4cd8ad01"
+    },
+    {
+        "comment": "It's an amzing laptop!",
+        "user": "655d9e75e66a38c240824461",
+        "product": "655c96e63d2fd1bd4cd8ad03"
+    },
+    {
+        "comment": "It's a wonderful laptop!",
+        "user": "655d9e8ae66a38c240824465",
+        "product": "655c96e63d2fd1bd4cd8ad03"
+    },
+    {
+        "comment": "It's Good!",
+        "user": "655d9e9ee66a38c240824469",
+        "product": "655c96e63d2fd1bd4cd8ad03"
+    }
+]

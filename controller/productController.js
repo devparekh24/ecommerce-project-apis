@@ -38,31 +38,6 @@ exports.getProductByProductTypes = catchAsyncErr(async (req, res, next) => {
     })
 })
 
-exports.commentOnProduct = catchAsyncErr(async (req, res, next) => {
-
-    const { id } = req.params;
-    const { comment } = req.body;
-
-    const product = await Product.findById(id)
-
-    if (!product) {
-        return next(new AppError('No Product Found with this ID', 404))
-    }
-    if (!comment || comment === '') {
-        return next(new AppError('Comment cannot be empty!', 404))
-    }
-
-    product.comments.push(comment)
-    await product.save()
-
-    res.status(200).json({
-        status: "success",
-        message: "Comment Added Successfully!",
-        comment
-
-    })
-})
-
 exports.getMostLikedProducts = catchAsyncErr(async (req, res, next) => {
 
     const products = await Product.find().sort({ likes: -1 }).limit(5).select('_id title likes')
@@ -77,3 +52,27 @@ exports.getMostLikedProducts = catchAsyncErr(async (req, res, next) => {
         products
     })
 })
+// exports.commentOnProduct = catchAsyncErr(async (req, res, next) => {
+
+//     const { id } = req.params;
+//     const { comment } = req.body;
+
+//     const product = await Product.findById(id)
+
+//     if (!product) {
+//         return next(new AppError('No Product Found with this ID', 404))
+//     }
+//     if (!comment || comment === '') {
+//         return next(new AppError('Comment cannot be empty!', 404))
+//     }
+
+//     product.comments.push(comment)
+//     await product.save()
+
+//     res.status(200).json({
+//         status: "success",
+//         message: "Comment Added Successfully!",
+//         comment
+
+//     })
+// })

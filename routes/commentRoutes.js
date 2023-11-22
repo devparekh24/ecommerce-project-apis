@@ -7,7 +7,6 @@ router.use(authController.protectedRoute)
 router
     .route('/')
     .get(commentController.getAllComments)
-    .post(commentController.createComment)
 
 router
     .route('/:id')
