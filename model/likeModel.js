@@ -21,7 +21,5 @@ const likeSchema = new mongoose.Schema({
     timestamps: true
 })
 
-likeSchema.index({ product: 1, user: 1 }, { unique: true })
-
 const Like = mongoose.model('Like', likeSchema)
 module.exports = Like

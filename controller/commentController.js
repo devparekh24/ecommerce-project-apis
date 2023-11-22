@@ -2,6 +2,7 @@ const mainController = require('./mainController')
 const Comment = require('../model/commentModel')
 const catchAsyncErr = require('./../utils/catchAsyncErr')
 const Product = require('../model/productModel')
+const AppError = require('../utils/appError')
 
 exports.setProductUserId = (req, res, next) => {
 
