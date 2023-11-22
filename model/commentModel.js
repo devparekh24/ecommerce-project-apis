@@ -21,5 +21,7 @@ const commentSchema = new mongoose.Schema({
     timestamps: true
 })
 
+commentSchema.index({ product: 1, user: 1 }, { unique: true })
+
 const Comment = mongoose.model('Comment', commentSchema)
 module.exports = Comment
