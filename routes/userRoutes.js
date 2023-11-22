@@ -14,6 +14,8 @@ router.patch('/updateMyPassword', authController.updatePassword)
 
 router.get('/logout', authController.logout)
 
+router.delete('/deleteMe', userController.deleteMe)
+
 router.use(authController.protectedRoute)
 
 router

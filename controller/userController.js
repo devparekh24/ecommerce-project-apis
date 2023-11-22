@@ -11,3 +11,13 @@ exports.createUser = catchAsyncErr(async (req, res, next) => {
         meassage: 'Please use /registeruser !'
     })
 })
+
+exports.deleteMe = catchAsyncErr(async (req, res, next) => {
+
+    await User.findByIdAndUpdate(req.user.id, { active: false })
+
+    res.status(204).json({
+        status: 'success',
+        data: null
+    })
+})
