@@ -16,7 +16,7 @@ router.get('/logout', authController.logout)
 
 router.delete('/deleteMe', userController.deleteMe)
 
-router.use(authController.protectedRoute)
+router.use(authController.protectedRoute, authController.restrictTo('admin'))
 
 router
     .route('/')

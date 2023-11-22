@@ -8,12 +8,12 @@ router.use(authController.protectedRoute)
 router
     .route('/')
     .get(productTypeController.getAllProductTypes)
-    .post(productTypeController.createProductType)
+    .post(authController.restrictTo('admin'), productTypeController.createProductType)
 
 router
     .route('/:id')
     .get(productTypeController.getProductType)
-    .patch(productTypeController.updateProductType)
-    .delete(productTypeController.deleteProductType)
+    .patch(authController.restrictTo('admin'), productTypeController.updateProductType)
+    .delete(authController.restrictTo('admin'), productTypeController.deleteProductType)
 
 module.exports = router

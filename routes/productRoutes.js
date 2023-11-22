@@ -16,12 +16,12 @@ router.post('/:id/likes', likeController.setProductUserId, likeController.addLik
 router
     .route('/')
     .get(productController.getAllProducts)
-    .post(productController.createProduct)
+    .post(authController.restrictTo('admin'), productController.createProduct)
 
 router
     .route('/:id')
     .get(productController.getProduct)
-    .patch(productController.updateProduct)
-    .delete(productController.deleteProduct)
+    .patch(authController.restrictTo('admin'), productController.updateProduct)
+    .delete(authController.restrictTo('admin'), productController.deleteProduct)
 
 module.exports = router
