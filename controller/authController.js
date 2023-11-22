@@ -165,8 +165,7 @@ exports.forgotPassword = catchAsyncErr(async (req, res, next) => {
         </p>
 
         <p>
-            Thanks,<br>
-            ${user.name}
+            Thank you!<br>
         </p>
 
     </div>
