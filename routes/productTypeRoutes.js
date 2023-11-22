@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const productTypeController = require('../controller/productTypeController')
+const authController = require('../controller/authController')
+
+router.use(authController.protectedRoute)
 
 router
     .route('/')
