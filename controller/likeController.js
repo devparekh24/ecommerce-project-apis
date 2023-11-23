@@ -47,9 +47,9 @@ exports.addLikeOnProduct = catchAsyncErr(async (req, res, next) => {
         product.likes.pop(setDisLike._id)
         await product.save()
 
-        res.status(204).json({
+        res.status(200).json({
             status: "success",
-            data: null
+            message: "Like Removed!"
         })
     }
 })
