@@ -2,7 +2,7 @@ const Product = require('../model/productModel')
 const AppError = require('../utils/appError')
 const catchAsyncErr = require('../utils/catchAsyncErr')
 const mainController = require('./mainController')
-
+const cloudinary = require('../utils/imgUpload')
 const populateOptions = {
     path: 'comments',
     select: 'comment'
@@ -40,6 +40,32 @@ exports.getProductByProductTypes = catchAsyncErr(async (req, res, next) => {
         status: 'success',
         result: productByType.length,
         data: productByType
+    })
+})
+
+exports.uploadImage = catchAsyncErr(async (req, res, next) => {
+
+    const { id } = req.params;
+
+    const product = await Product.findById(id);
+    if (!product) {
+        return next(new AppError('No Product Found!', 404));
+    }
+
+    const thumbnailImg = await cloudinary.uploader.upload(req.file.path, {
+        width: 500,
+        height: 500,
+        crop: 'fill'
+    })
+
+    const updateProductThImg = await Product.findByIdAndUpdate(id, { thumbnail: thumbnailImg.url })
+    if (!updateProductThImg) {
+        return next(new AppError('No Product Found!', 404))
+    }
+
+    res.status(200).json({
+        status: 'success',
+        message: 'Thumbnail Image Uploaded Successfully!'
     })
 })
 
