@@ -2,9 +2,10 @@ const catchAsyncErr = require('./../utils/catchAsyncErr')
 const AppError = require('./../utils/appError')
 const APIFeatures = require('../utils/apiFeatures')
 
-exports.getAll = (Model) => catchAsyncErr(async (req, res, next) => {
+exports.getAll = (Model, populateOptions) => catchAsyncErr(async (req, res, next) => {
 
     let filter = {}
+    let doc;
 
     const features = new APIFeatures(Model.find(filter), req.query)
         .filter()
@@ -13,7 +14,12 @@ exports.getAll = (Model) => catchAsyncErr(async (req, res, next) => {
         .paginate();
 
     // const doc = await features.query.explain(); // exp for indexes in DB
-    const doc = await features.query.select('-__v -createdAt -updatedAt');
+
+    if (populateOptions) {
+        doc = await features.query.populate(populateOptions);
+    } else {
+        doc = await features.query.select('-__v -createdAt -updatedAt');
+    }
 
     res.status(200).json({
         status: 'success',

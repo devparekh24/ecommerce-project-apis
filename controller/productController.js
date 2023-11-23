@@ -3,8 +3,13 @@ const AppError = require('../utils/appError')
 const catchAsyncErr = require('../utils/catchAsyncErr')
 const mainController = require('./mainController')
 
-exports.getAllProducts = mainController.getAll(Product)
-exports.getProduct = mainController.getOne(Product)
+const populateOptions = {
+    path: 'comments',
+    select: 'comment'
+}
+
+exports.getAllProducts = mainController.getAll(Product, populateOptions)
+exports.getProduct = mainController.getOne(Product, populateOptions)
 exports.createProduct = mainController.createOne(Product)
 exports.updateProduct = mainController.updateOne(Product)
 exports.deleteProduct = mainController.deleteOne(Product)
