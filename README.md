@@ -59,6 +59,9 @@ This project involves the creation of an Ecommerce system with various APIs to f
 - **Create New Product**
   Add a new product to the system.
 
+- **Thumbnail Upload of Product**
+  Upload the thumbnail of the product from the system.
+  
 - **Edit Product**
   Modify information about an existing product.
 
